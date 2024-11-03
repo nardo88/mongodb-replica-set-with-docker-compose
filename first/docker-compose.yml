@@ -1,0 +1,32 @@
+version: "3.1"
+
+services:
+  mongo_one:
+    container_name: mongo1
+    image: mongo:4.4
+    command: mongod --replSet my-mongo-set
+    ports:
+      - 27001:27017
+    networks:
+      - mongo-cluster
+
+  mongo_two:
+    container_name: mongo2
+    image: mongo:4.4
+    command: mongod --replSet my-mongo-set
+    ports:
+      - 27002:27017
+    networks:
+      - mongo-cluster
+
+  mongo_three:
+    container_name: mongo3
+    image: mongo:4.4
+    command: mongod --replSet my-mongo-set
+    ports:
+      - 27003:27017
+    networks:
+      - mongo-cluster
+
+networks:
+  mongo-cluster:
