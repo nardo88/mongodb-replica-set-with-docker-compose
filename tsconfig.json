@@ -10,7 +10,12 @@
     "noImplicitAny": true,
     "sourceMap": true,
     "resolveJsonModule": true,
-
+    "paths": {
+      "@controllers/*": ["./controllers/*"],
+      "@models/*": ["./models/*"],
+      "@routes/*": ["./routes/*"],
+      "@helpers/*": ["./helpers/*"]
+    },
     "typeRoots": ["helpers/types", "node_modules/@types"]
   },
   "exclude": ["./node_modules"]

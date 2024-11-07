@@ -1,7 +1,6 @@
+import { createId } from "@helpers/createId";
+import Things from "@models/things";
 import { Request, Response } from "express";
-import Users from "../models/users";
-import { createId } from "../helpers/createId";
-import Things from "../models/things";
 
 export class ThingsController {
   async addThing(req: Request, res: Response) {

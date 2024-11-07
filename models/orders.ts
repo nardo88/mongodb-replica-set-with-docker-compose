@@ -32,7 +32,4 @@ const OrderSchema = new Schema(
   { timestamps: true, collection: "orders", autoCreate: true }
 );
 
-export default mongoose.model<IOrder & mongoose.Document>(
-  "Things",
-  OrderSchema
-);
+export default mongoose.model<IOrder & mongoose.Document>("Order", OrderSchema);

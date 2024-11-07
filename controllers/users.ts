@@ -1,13 +1,13 @@
+import { createId } from "@helpers/createId";
+import users from "@models/users";
 import { Request, Response } from "express";
-import Users from "../models/users";
-import { createId } from "../helpers/createId";
 
 export class UserController {
   async addUser(req: Request, res: Response) {
     try {
       const { name, email } = req.body;
       const _id = createId();
-      const user = new Users({
+      const user = new users({
         name,
         email,
         _id,
