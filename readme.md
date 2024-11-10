@@ -97,3 +97,43 @@ docker ps -a
 ---
 
 ## Dockerfile
+
+### Example 1
+
+Создание образа из Dockerfile
+
+docker build .
+
+. - точка указывать путь к фалу Dockerfile
+
+Ключи:
+
+-f <имя*докер*файла> - в случае если мы переименовали наш докер файл то с помощью ключа -f можно указать какой именно файл надо использовать
+
+-t accel-api:4.1.2 - -t задает имя образу. accel-api имя для образа (это имя потом используем при создании контейнера docker run <имя>), 4.1.2 - версия
+
+---
+
+docker build . -t example-1
+
+docker images
+
+docker run -d -p 5001:5000 --name example-api --rm -e MY_VAR=123 example-1
+
+docker ps
+
+http://localhost:5001/
+
+docker exec -it -u root example-api sh
+
+env - что бы посмотреть MY_VAR
+
+hostname -i - что бы посмотреть внутренний IP
+
+docker stop example-api
+
+docker images
+
+docker image rm example-1
+
+---
