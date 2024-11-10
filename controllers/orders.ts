@@ -29,6 +29,12 @@ export class OrderController {
 
       await order.save({ session });
 
+      // Данные сохраняются временно, и видны только в рамках транзакции
+      // await order.save(); // Если сохраняем без сессии, то поиск обычный будет работать
+      // const o = await Orders.find({ _id }); // Так не найдет, o = [] пустой массив
+      // const o = await Orders.find({ orderId: 123 }).session(session) // Так найдет
+      // console.log("o: ", o);
+
       // errorGenerator.typeError(0); // Генерируем ошибку
 
       // @ts-ignore
