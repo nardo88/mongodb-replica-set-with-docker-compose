@@ -82,6 +82,8 @@ docker run -p 3000:80 -d --name my_nginx -e MY_VAR=123 -v /home/nardo/nginx:/usr
 
 ## helper
 
+---
+
 docker ps
 
 http://localhost:3000/
